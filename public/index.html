@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom AI Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Custom AI Assistant</h1>
+      <p class="sub">Vercel-ready. Static UI + serverless API.</p>
+    </header>
+    <main class="layout">
+      <section class="col chat-col">
+        <div id="chat" class="chat"></div>
+        <form id="chat-form" class="composer">
+          <textarea id="input" placeholder="Type a message..." rows="2"></textarea>
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+      </section>
+      <aside class="col kpi-col">
+        <div class="panel">
+          <h2>KPI Snapshot</h2>
+          <div id="kpis" class="kpis"></div>
+          <div class="actions">
+            <button data-evt="lead">+ Lead</button>
+            <button data-evt="conversion">+ Conversion</button>
+            <div class="csat">
+              <label>CSAT:</label>
+              <div class="stars">
+                <button data-csat="1">1</button>
+                <button data-csat="2">2</button>
+                <button data-csat="3">3</button>
+                <button data-csat="4">4</button>
+                <button data-csat="5">5</button>
+              </div>
+            </div>
+          </div>
+          <details>
+            <summary>Recent Events</summary>
+            <pre id="logs" class="logs"></pre>
+          </details>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <small>Health: <a href="/api/metrics" target="_blank">/api/metrics</a></small>
+    </footer>
+  </div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
